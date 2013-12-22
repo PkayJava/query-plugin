@@ -27,8 +27,8 @@ import com.itrustcambodia.plugin.query.model.Table;
 @Controller
 public class ImportRestAPI {
 
-//    private static final Logger LOGGER = LoggerFactory
-//            .getLogger(ImportRestAPI.class);
+    // private static final Logger LOGGER = LoggerFactory
+    // .getLogger(ImportRestAPI.class);
 
     @Secured(roles = { @Role(name = "ROLE_REST_QUERY_PLUGIN_IMPORT", description = "Access Query Plugin Rest Import") })
     @RequestMapping(value = "/queryplugin/api/import", method = RequestMethod.POST)
@@ -37,6 +37,7 @@ public class ImportRestAPI {
             HttpServletRequest request, HttpServletResponse response)
             throws JsonIOException, IOException {
         request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
         Gson gson = application.getGson();
 
         InputStreamReader streamReader = new InputStreamReader(
@@ -70,6 +71,7 @@ public class ImportRestAPI {
             HttpServletRequest request, HttpServletResponse response)
             throws JsonIOException, IOException {
         request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
         Gson gson = application.getGson();
 
         InputStreamReader streamReader = new InputStreamReader(
