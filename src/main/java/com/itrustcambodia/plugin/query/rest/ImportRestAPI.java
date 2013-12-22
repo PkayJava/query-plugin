@@ -41,7 +41,7 @@ public class ImportRestAPI {
         Gson gson = application.getGson();
 
         InputStreamReader streamReader = new InputStreamReader(
-                request.getInputStream());
+                request.getInputStream(), "UTF-8");
 
         Table table = gson.fromJson(streamReader, Table.class);
         if (table == null || table.getName() == null
@@ -75,7 +75,7 @@ public class ImportRestAPI {
         Gson gson = application.getGson();
 
         InputStreamReader streamReader = new InputStreamReader(
-                request.getInputStream());
+                request.getInputStream(), "UTF-8");
 
         Table[] tables = gson.fromJson(streamReader, Table[].class);
         if (tables == null || tables.length == 0) {
