@@ -10,9 +10,9 @@
 	<properties>
 		<java.version>1.6</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<spring.web.version>4.0.0.RELEASE</spring.web.version>
+		<spring.web.version>4.0.2.RELEASE</spring.web.version>
 		<slf4j.version>1.7.5</slf4j.version>
-		<jasypt.version>1.9.0</jasypt.version>
+		<jasypt.version>1.9.2</jasypt.version>
 
 		<maven.clean.plugin.version>2.5</maven.clean.plugin.version>
 		<maven.install.plugin.version>2.5</maven.install.plugin.version>
@@ -77,7 +77,7 @@
 		<dependency>
 			<groupId>com.itrustcambodia.pluggable</groupId>
 			<artifactId>pluggable</artifactId>
-			<version>0.6.3.5</version>
+			<version>0.6.3.7</version>
 		</dependency>
 
 		<!-- Servlet -->
@@ -98,7 +98,7 @@
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
-			<version>3.1</version>
+			<version>3.3</version>
 		</dependency>
 
 		<dependency>
