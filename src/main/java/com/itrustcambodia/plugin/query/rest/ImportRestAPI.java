@@ -36,8 +36,6 @@ public class ImportRestAPI {
     public Result importResult(AbstractWebApplication application,
             HttpServletRequest request, HttpServletResponse response)
             throws JsonIOException, IOException {
-        request.setCharacterEncoding("UTF-8");
-        response.setCharacterEncoding("UTF-8");
         Gson gson = application.getGson();
 
         InputStreamReader streamReader = new InputStreamReader(
@@ -47,7 +45,7 @@ public class ImportRestAPI {
         if (table == null || table.getName() == null
                 || "".equals(table.getName()) || table.getFields() == null
                 || table.getFields().length == 0) {
-            return Result.badRequest("application/json");
+            return Result.badRequest(response, "application/json");
         }
         SimpleJdbcInsert insert = new SimpleJdbcInsert(
                 application.getJdbcTemplate());
@@ -61,7 +59,7 @@ public class ImportRestAPI {
         } catch (DuplicateKeyException duplicateKeyException) {
             // LOGGER.info(duplicateKeyException.getMessage());
         }
-        return Result.ok("application/json");
+        return Result.ok(response, "application/json");
     }
 
     @Secured(roles = { @Role(name = "ROLE_REST_QUERY_PLUGIN_IMPORT_BATCH", description = "Access Query Plugin Rest Import Batch") })
@@ -70,8 +68,6 @@ public class ImportRestAPI {
     public Result importBatch(AbstractWebApplication application,
             HttpServletRequest request, HttpServletResponse response)
             throws JsonIOException, IOException {
-        request.setCharacterEncoding("UTF-8");
-        response.setCharacterEncoding("UTF-8");
         Gson gson = application.getGson();
 
         InputStreamReader streamReader = new InputStreamReader(
@@ -79,14 +75,14 @@ public class ImportRestAPI {
 
         Table[] tables = gson.fromJson(streamReader, Table[].class);
         if (tables == null || tables.length == 0) {
-            return Result.badRequest("application/json");
+            return Result.badRequest(response, "application/json");
         } else {
             for (Table table : tables) {
                 if (table == null || table.getName() == null
                         || "".equals(table.getName())
                         || table.getFields() == null
                         || table.getFields().length == 0) {
-                    return Result.badRequest("application/json");
+                    return Result.badRequest(response, "application/json");
                 }
             }
         }
@@ -106,7 +102,7 @@ public class ImportRestAPI {
             }
         }
 
-        return Result.ok("application/json");
+        return Result.ok(response, "application/json");
     }
 
 }

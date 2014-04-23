@@ -32,8 +32,6 @@ public class ExportRestAPI {
     public Result tables(AbstractWebApplication application,
             HttpServletRequest request, HttpServletResponse response)
             throws JsonIOException, IOException {
-        request.setCharacterEncoding("UTF-8");
-        response.setCharacterEncoding("UTF-8");
 
         List<String> tables = new ArrayList<String>();
 
@@ -43,7 +41,7 @@ public class ExportRestAPI {
 
         Gson gson = application.getBean(Gson.class);
         gson.toJson(tables, response.getWriter());
-        return Result.ok("application/json");
+        return Result.ok(response, "application/json");
     }
 
     @Secured(roles = { @Role(name = "ROLE_REST_QUERY_PLUGIN_EXPORT_QUERY", description = "Access Query Plugin Rest Export Query Data") })
@@ -52,8 +50,6 @@ public class ExportRestAPI {
     public Result query(AbstractWebApplication application,
             HttpServletRequest request, HttpServletResponse response)
             throws JsonIOException, IOException {
-        request.setCharacterEncoding("UTF-8");
-        response.setCharacterEncoding("UTF-8");
         JdbcTemplate jdbcTemplate = application.getBean(JdbcTemplate.class);
 
         String query = request.getParameter("query");
@@ -61,14 +57,14 @@ public class ExportRestAPI {
         List<Map<String, Object>> body = null;
 
         if (query == null || "".equals(query)) {
-            return Result.badRequest("application/json");
+            return Result.badRequest(response, "application/json");
         }
 
         body = jdbcTemplate.queryForList(query);
 
         Gson gson = application.getBean(Gson.class);
         gson.toJson(body, response.getWriter());
-        return Result.ok("application/json");
+        return Result.ok(response, "application/json");
     }
 
     @Secured(roles = { @Role(name = "ROLE_REST_QUERY_PLUGIN_EXPORT_RESULT", description = "Access Query Plugin Rest Export Data Result") })
@@ -81,8 +77,6 @@ public class ExportRestAPI {
     public Result results(AbstractWebApplication application,
             HttpServletRequest request, HttpServletResponse response)
             throws JsonIOException, IOException {
-        request.setCharacterEncoding("UTF-8");
-        response.setCharacterEncoding("UTF-8");
         JdbcTemplate jdbcTemplate = application.getBean(JdbcTemplate.class);
 
         Long firstResult = 0l;
@@ -99,7 +93,7 @@ public class ExportRestAPI {
         String table = request.getParameter("table");
         String sortField = request.getParameter("sortField");
         if (table == null || "".equals(table)) {
-            return Result.badRequest("application/json");
+            return Result.badRequest(response, "application/json");
         }
 
         List<Map<String, Object>> body = null;
@@ -113,6 +107,6 @@ public class ExportRestAPI {
         }
         Gson gson = application.getBean(Gson.class);
         gson.toJson(body, response.getWriter());
-        return Result.ok("application/json");
+        return Result.ok(response, "application/json");
     }
 }
