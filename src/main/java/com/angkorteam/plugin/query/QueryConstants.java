@@ -1,6 +1,6 @@
-package com.itrustcambodia.plugin.query;
+package com.angkorteam.plugin.query;
 
-import com.itrustcambodia.pluggable.PluggableConstants;
+import com.angkorteam.pluggable.PluggableConstants;
 
 public interface QueryConstants extends PluggableConstants {
 

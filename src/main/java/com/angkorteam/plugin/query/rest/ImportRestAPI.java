@@ -1,4 +1,4 @@
-package com.itrustcambodia.plugin.query.rest;
+package com.angkorteam.plugin.query.rest;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -11,18 +11,18 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 
+import com.angkorteam.pluggable.core.AbstractWebApplication;
+import com.angkorteam.pluggable.doc.ApiMethod;
+import com.angkorteam.pluggable.rest.Controller;
+import com.angkorteam.pluggable.rest.RequestMapping;
+import com.angkorteam.pluggable.rest.RequestMethod;
+import com.angkorteam.pluggable.rest.Result;
+import com.angkorteam.pluggable.wicket.authroles.Role;
+import com.angkorteam.pluggable.wicket.authroles.Secured;
+import com.angkorteam.plugin.query.model.Field;
+import com.angkorteam.plugin.query.model.Table;
 import com.google.gson.Gson;
 import com.google.gson.JsonIOException;
-import com.itrustcambodia.pluggable.core.AbstractWebApplication;
-import com.itrustcambodia.pluggable.doc.ApiMethod;
-import com.itrustcambodia.pluggable.rest.Controller;
-import com.itrustcambodia.pluggable.rest.RequestMapping;
-import com.itrustcambodia.pluggable.rest.RequestMethod;
-import com.itrustcambodia.pluggable.rest.Result;
-import com.itrustcambodia.pluggable.wicket.authroles.Role;
-import com.itrustcambodia.pluggable.wicket.authroles.Secured;
-import com.itrustcambodia.plugin.query.model.Field;
-import com.itrustcambodia.plugin.query.model.Table;
 
 @Controller
 public class ImportRestAPI {

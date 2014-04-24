@@ -1,16 +1,16 @@
-package com.itrustcambodia.plugin.query.plugin;
+package com.angkorteam.plugin.query.plugin;
 
-import com.itrustcambodia.pluggable.core.AbstractPlugin;
-import com.itrustcambodia.pluggable.core.AbstractWebApplication;
-import com.itrustcambodia.pluggable.migration.AbstractPluginMigrator;
-import com.itrustcambodia.pluggable.page.PluginSettingPage;
-import com.itrustcambodia.pluggable.page.WebPage;
-import com.itrustcambodia.plugin.query.page.SQLQueryPage;
-import com.itrustcambodia.plugin.query.page.SettingPage;
+import com.angkorteam.pluggable.core.AbstractPlugin;
+import com.angkorteam.pluggable.core.AbstractWebApplication;
+import com.angkorteam.pluggable.migration.AbstractPluginMigrator;
+import com.angkorteam.pluggable.page.PluginSettingPage;
+import com.angkorteam.pluggable.page.WebPage;
+import com.angkorteam.plugin.query.page.SQLQueryPage;
+import com.angkorteam.plugin.query.page.SettingPage;
 
 public class QueryPlugin extends AbstractPlugin {
 
-    public static final String ID = "com.itrustcambodia.plugin.query";
+    public static final String ID = "com.angkorteam.plugin.query";
 
     @Override
     public String getName() {
@@ -52,7 +52,7 @@ public class QueryPlugin extends AbstractPlugin {
 
     @Override
     public String[] getPackages() {
-        return new String[] { "com.itrustcambodia.plugin.query" };
+        return new String[] { "com.angkorteam.plugin.query" };
     }
 
 }

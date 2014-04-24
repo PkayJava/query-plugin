@@ -1,7 +1,7 @@
-package com.itrustcambodia.plugin.query.plugin;
+package com.angkorteam.plugin.query.plugin;
 
-import com.itrustcambodia.pluggable.core.Version;
-import com.itrustcambodia.pluggable.migration.AbstractPluginMigrator;
+import com.angkorteam.pluggable.core.Version;
+import com.angkorteam.pluggable.migration.AbstractPluginMigrator;
 
 public class QueryMigrator extends AbstractPluginMigrator {
 

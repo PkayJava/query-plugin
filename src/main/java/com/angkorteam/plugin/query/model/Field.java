@@ -1,4 +1,4 @@
-package com.itrustcambodia.plugin.query.model;
+package com.angkorteam.plugin.query.model;
 
 import java.io.Serializable;
 

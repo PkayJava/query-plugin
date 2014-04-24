@@ -1,4 +1,4 @@
-package com.itrustcambodia.plugin.query.page;
+package com.angkorteam.plugin.query.page;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -16,14 +16,14 @@ import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.model.PropertyModel;
 import org.springframework.jdbc.BadSqlGrammarException;
 
-import com.itrustcambodia.pluggable.core.AbstractWebApplication;
-import com.itrustcambodia.pluggable.core.Menu;
-import com.itrustcambodia.pluggable.core.Mount;
-import com.itrustcambodia.pluggable.layout.AbstractLayout;
-import com.itrustcambodia.pluggable.page.WebPage;
-import com.itrustcambodia.pluggable.wicket.authroles.Role;
-import com.itrustcambodia.pluggable.wicket.authroles.authorization.strategies.role.Roles;
-import com.itrustcambodia.pluggable.wicket.authroles.authorization.strategies.role.annotations.AuthorizeInstantiation;
+import com.angkorteam.pluggable.core.AbstractWebApplication;
+import com.angkorteam.pluggable.core.Menu;
+import com.angkorteam.pluggable.core.Mount;
+import com.angkorteam.pluggable.layout.AbstractLayout;
+import com.angkorteam.pluggable.page.WebPage;
+import com.angkorteam.pluggable.wicket.authroles.Role;
+import com.angkorteam.pluggable.wicket.authroles.authorization.strategies.role.Roles;
+import com.angkorteam.pluggable.wicket.authroles.authorization.strategies.role.annotations.AuthorizeInstantiation;
 
 @AuthorizeInstantiation(roles = { @Role(name = "ROLE_QUERY_PLUGIN_PAGE_SQL_QUERY", description = "Role Access Query Plugin SQLQuery Page") })
 @Mount("/query/exec")

@@ -1,15 +1,15 @@
-package com.itrustcambodia.plugin.query.page;
+package com.angkorteam.plugin.query.page;
 
 import java.util.List;
 
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 
-import com.itrustcambodia.pluggable.core.Menu;
-import com.itrustcambodia.pluggable.core.Mount;
-import com.itrustcambodia.pluggable.page.PluginSettingPage;
-import com.itrustcambodia.pluggable.wicket.authroles.Role;
-import com.itrustcambodia.pluggable.wicket.authroles.authorization.strategies.role.Roles;
-import com.itrustcambodia.pluggable.wicket.authroles.authorization.strategies.role.annotations.AuthorizeInstantiation;
+import com.angkorteam.pluggable.core.Menu;
+import com.angkorteam.pluggable.core.Mount;
+import com.angkorteam.pluggable.page.PluginSettingPage;
+import com.angkorteam.pluggable.wicket.authroles.Role;
+import com.angkorteam.pluggable.wicket.authroles.authorization.strategies.role.Roles;
+import com.angkorteam.pluggable.wicket.authroles.authorization.strategies.role.annotations.AuthorizeInstantiation;
 
 @AuthorizeInstantiation(roles = { @Role(name = "ROLE_QUERY_PLUGIN_PAGE_SETTING", description = "Role Access Query Plugin Setting Page") })
 @Mount("/query/setting")
